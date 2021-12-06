@@ -1,0 +1,107 @@
+cluster:
+  name: managed
+  api_vip: 172.19.93.252
+  ingress_vip: 172.19.93.253
+  clusternetwork: 10.128.0.0/14
+  servicenetwork: 172.30.0.0/16
+  default_router: 172.19.93.1
+  ## Optional override parameters for local cluster
+  #################################################
+  #default_storage_class: "ocs-storagecluster-ceph-rbd"
+  ## default_storage_class: "ocs-external-storagecluster-ceph-rbd"
+  #ssh_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkn6tx/IfpY1Eb9QVBsr2Q5WHDGSDTbysuW+2OiifkVfrP/0zVjo7pe1bBxUaEID0rWN6CC1VTwS4GX6cZhGr0wlgT8TUN+rHutxL0Tawqy+yTzqYJ+Vfeilz3CfdAt06QJL9sy57RrlsSTIrlU8CijJTght+v57tmWyKDt2mNJL/5WX9PG40mgXqQ+tfFn+cluOc3V+XcK5dx89dS3oD3Wzn/FmTdwKm8+bnZapWBz7YJf3BU5AL+E82vRCIyZ2MnzbjJ33nTgEF/NdKLEPtyp1dT3Lb0mGB8duj0CFtA3u7CwVi/KMp9JdssN3mN8mGtPE+NwYKsbDA1/++jRCqX login'
+  #operator_catalog_name: redhat-operator-index
+
+nodes:
+  masters:
+  - name: "vCore-Master-1"
+    role: master
+    lso: "true"
+    ocs: "true"
+    bond0_IP: "172.19.93.8"
+    int1_name: "enp1f0"
+    int1_mac: "48:df:37:8d:24:50"
+    int2_name: "enp4f0"
+    int2_mac: "48:df:37:8d:01:80"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: http://172.18.5.39/redfish/v1/systems/1
+
+  - name: "vCore-Master-2"
+    role: master
+    lso: "true"
+    ocs: "true"
+    bond0_IP: "172.19.93.9"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:8d:18:88"
+    int2_name: "enp4f0"
+    int2_mac: "14:02:ec:8d:18:74"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: http://172.18.5.5/redfish/v1/systems/1
+
+  - name: "vCore-Master-3"
+    role: master
+    lso: "true"
+    ocs: "true"
+    bond0_IP: "172.19.93.10"
+    int1_name: "enp1f0"
+    int1_mac: "8c:dc:d4:ae:48:f4"
+    int2_name: "enp4f0"
+    int2_mac: "48:df:37:19:7d:4c"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: http://172.18.5.7/redfish/v1/systems/1
+
+  workers:
+  - name: "vCore-Worker-1"
+    role: worker
+    lso: "false"
+    ocs: "false"
+    bond0_IP: "172.19.93.11"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:89:9b:6c"
+    int2_name: "enp2f0"
+    int2_mac: "14:02:ec:89:9b:84"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: http://172.18.5.109/redfish/v1/systems/1
+
+  - name: "vCore-Worker-2"
+    role: worker
+    lso: "false"
+    ocs: "false"
+    bond0_IP: "172.19.93.12"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:89:ac:9c"
+    int2_name: "enp2f0"
+    int2_mac: "14:02:ec:89:96:40"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: http://172.18.5.110/redfish/v1/systems/1
+
+  - name: "vCore-Worker-3"
+    role: worker
+    lso: "false"
+    ocs: "false"
+    bond0_IP: "172.19.93.13"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:89:96:58"
+    int2_name: "enp2f0"
+    int2_mac: "14:02:ec:89:ac:90"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: http://172.18.5.135/redfish/v1/systems/1
+
+  - name: "vCore-Worker-4"
+    role: worker
+    lso: "false"
+    ocs: "false"
+    bond0_IP: "172.19.93.16"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:89:a4:4c"
+    int2_name: "enp2f0"
+    int2_mac: "14:02:ec:89:af:7c"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: http://172.18.5.136/redfish/v1/systems/1
