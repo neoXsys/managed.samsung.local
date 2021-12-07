@@ -16,7 +16,11 @@ spec:
         ipv6:
           enabled: false
         ipv4:
-          enabled: false
+          enabled: true
+          address:
+            - ip: {{ .bond0_IP }}
+              prefix-length: 24
+          dhcp: false
         link-aggregation:
           mode: active-backup
           options:
@@ -25,21 +29,6 @@ spec:
           slaves:
           - {{ .int1_name }}
           - {{ .int2_name }}
-      - name: bond0.1993
-        type: vlan
-        state: up
-        mtu: 8996
-        vlan:
-          base-iface: bond0
-          id: 1993
-        ipv6:
-          enabled: false
-        ipv4:
-          enabled: true
-          address:
-            - ip: {{ .bond0_IP }}
-              prefix-length: 24
-          dhcp: false
       - name: {{ .int1_name }}
         type: ethernet
         state: up
