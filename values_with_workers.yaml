@@ -56,3 +56,55 @@ nodes:
     bmc_password: 1q2w3e4r
     bmc_address: https://172.18.5.7/redfish/v1/Systems/1
 
+  worker:
+  - name: "vcore-worker-1"
+    role: worker
+    lso: "false"
+    ocs: "false"
+    bond0_IP: "172.19.93.11"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:89:9b:6c"
+    int2_name: "enp2f0"
+    int2_mac: "14:02:ec:89:9b:84"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: https://172.18.5.109/redfish/v1/Systems/1
+
+  - name: "vcore-worker-2"
+    role: worker
+    lso: "false"
+    ocs: "false"
+    bond0_IP: "172.19.93.12"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:89:ac:9c"
+    int2_name: "enp2f0"
+    int2_mac: "14:02:ec:89:96:40"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: https://172.18.5.110/redfish/v1/Systems/1
+
+  - name: "vcore-worker-3"
+    role: worker
+    lso: "false"
+    ocs: "false"
+    bond0_IP: "172.19.93.13"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:89:96:58"
+    int2_name: "enp2f0"
+    int2_mac: "14:02:ec:89:ac:90"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: https://172.18.5.135/redfish/v1/Systems/1
+
+  - name: "vcore-worker-4"
+    role: worker
+    lso: "false"
+    ocs: "false"
+    bond0_IP: "172.19.93.16"
+    int1_name: "enp1f0"
+    int1_mac: "14:02:ec:89:a4:4c"
+    int2_name: "enp2f0"
+    int2_mac: "14:02:ec:89:af:7c"
+    bmc_username: redhat
+    bmc_password: 1q2w3e4r
+    bmc_address: https://172.18.5.136/redfish/v1/Systems/1
