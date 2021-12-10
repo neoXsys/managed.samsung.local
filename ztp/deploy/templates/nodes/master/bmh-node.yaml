@@ -16,7 +16,7 @@ spec:
   online: true
   bootMACAddress: {{ .int1_mac }}
   automatedCleaningMode: disabled
-  #externallyProvisioned: True
+  externallyProvisioned: True
   #hardwareProfile: libvirt
   bmc:
     #address: redfish-virtualmedia+{{ .bmc_address }}
